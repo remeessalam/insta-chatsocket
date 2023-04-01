@@ -4,7 +4,7 @@ const socketServer = require('./services/socketserver')
 const { Server } = require('socket.io');
 const cors = require('cors');
 const logger = require('morgan');
-const env = require('dotenv').config()
+// const env = require('dotenv').config()
 const app = express()
 const server = http.createServer(app);
 
@@ -29,12 +29,13 @@ io.on('connection', (socket) => {
 })
 app.use('/', (req, res) => {
     console.log('call reached')
-
     res.send('running')
 })
 
 
-const PORT = process.env.PORT || 4000
+const PORT =  4000
 server.listen(PORT, () =>
     console.log(` app listening on port ${PORT}!`),
 );
+
+//process.env.PORT ||
